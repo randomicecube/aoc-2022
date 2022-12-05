@@ -7,7 +7,7 @@
 inline int get_letter_score(char c) { return c >= 'a' ? c - 'a' + 1 : c - 'A' + 27; }
 
 int main() {
-  std::ifstream input{"aoc-3-input.txt"};
+  std::ifstream input{"resources/aoc-3-input.txt"};
   std::string line;
   int score = 0;
   while (getline(input, line)) {
