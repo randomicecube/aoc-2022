@@ -29,7 +29,7 @@ const std::vector<plays> helper = {
 // clang-format on
 
 int main() {
-  std::ifstream input{"aoc-2-input.txt"};
+  std::ifstream input{"resources/aoc-2-input.txt"};
   std::string line;
   int score = 0;
   while (std::getline(input, line)) {
