@@ -7,7 +7,7 @@
 #define FULLY_CONTAINED(a, b, c, d) ((a >= c && b <= d) || (a <= c && b >= d))
 
 int main() {
-  std::ifstream input{"aoc-4-input.txt"};
+  std::ifstream input{"resources/aoc-4-input.txt"};
   std::string line;
   int score = 0;
   while (getline(input, line)) {
