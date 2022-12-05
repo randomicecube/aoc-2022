@@ -11,7 +11,8 @@ enum class Parser { CRATE, MOVEMENT };
 
 Parser crateParser(std::string line, Stacks &stacks) {
   // every 4 characters is a crate
-  for (auto i = 0; i < line.size(); i += 4) {
+  int line_size = line.size();
+  for (int i = 0; i < line_size; i += 4) {
     int stack = i / 4;
     char crate = line[i + 1];
     if (crate == ' ') {
@@ -41,10 +42,12 @@ void movementParser(std::string line, Stacks &stacks) {
 int main() {
   std::ifstream input("aoc-5-input.txt");
   std::string line;
-  int i = 0;
   Stacks stacks(9); // yes this is hardcoded
   Parser parsing = Parser::CRATE;
   while (std::getline(input, line)) {
+    if (line.empty()) {
+      continue;
+    }
     if (parsing == Parser::CRATE) {
       parsing = crateParser(line, stacks);
       continue;
