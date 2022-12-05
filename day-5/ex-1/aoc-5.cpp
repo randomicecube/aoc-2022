@@ -4,7 +4,8 @@
 #include <string>
 #include <vector>
 
-typedef std::vector<std::vector<char>> Stacks;
+typedef std::vector<char> Stack;
+typedef std::vector<Stack> Stacks;
 
 enum class Parser { CRATE, MOVEMENT };
 
@@ -30,14 +31,14 @@ void movementParser(std::string line, Stacks &stacks) {
   // both stacks are 0-indexed
   original_stack--;
   target_stack--;
-  for (auto i = 0; i < crate_amount; i++) {
+  for (int i = 0; i < crate_amount; i++) {
     stacks[target_stack].push_back(stacks[original_stack].back());
     stacks[original_stack].pop_back();
   }
 }
 
 int main() {
-  std::ifstream input("aoc-5-input.txt");
+  std::ifstream input("resources/aoc-5-input.txt");
   std::string line;
   Stacks stacks(9); // yes this is hardcoded
   Parser parsing = Parser::CRATE;
@@ -52,7 +53,7 @@ int main() {
     movementParser(line, stacks);
   }
 
-  for (auto stack : stacks) {
+  for (Stack stack : stacks) {
     std::cout << stack.back();
   }
   std::cout << std::endl;

@@ -32,7 +32,7 @@ void movementParser(std::string line, Stacks &stacks) {
   original_stack--;
   target_stack--;
   Stack moved;
-  for (auto i = 0; i < crate_amount; i++) {
+  for (int i = 0; i < crate_amount; i++) {
     moved.insert(moved.begin(), stacks[original_stack].back());
     stacks[original_stack].pop_back();
   }
@@ -40,7 +40,7 @@ void movementParser(std::string line, Stacks &stacks) {
 }
 
 int main() {
-  std::ifstream input("aoc-5-input.txt");
+  std::ifstream input("resources/aoc-5-input.txt");
   std::string line;
   Stacks stacks(9); // yes this is hardcoded
   Parser parsing = Parser::CRATE;
@@ -55,7 +55,7 @@ int main() {
     movementParser(line, stacks);
   }
 
-  for (auto stack : stacks) {
+  for (Stack stack : stacks) {
     std::cout << stack.back();
   }
   std::cout << std::endl;
