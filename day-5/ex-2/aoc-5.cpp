@@ -40,7 +40,7 @@ void movementParser(std::string line, Stacks &stacks) {
 }
 
 int main() {
-  std::ifstream input("resources/aoc-5-input.txt");
+  std::ifstream input("resources/aoc-input.txt");
   std::string line;
   Stacks stacks(9); // yes this is hardcoded
   Parser parsing = Parser::CRATE;

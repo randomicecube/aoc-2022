@@ -8,7 +8,7 @@
 #define OVERLAP(a, b, c, d) (std::max(a, c) <= std::min(b, d))
 
 int main() {
-  std::ifstream input{"resources/aoc-4-input.txt"};
+  std::ifstream input{"resources/aoc-input.txt"};
   std::string line;
   int score = 0;
   while (getline(input, line)) {

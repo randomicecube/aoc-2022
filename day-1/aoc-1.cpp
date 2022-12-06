@@ -8,7 +8,7 @@ int main() {
   std::vector<int> calories;
   int currentCalories = 0;
   std::ifstream file;
-  file.open("resources/aoc-1-input.txt");
+  file.open("resources/aoc-input.txt");
   if (file.is_open()) {
     std::string line;
     while (std::getline(file, line)) {
